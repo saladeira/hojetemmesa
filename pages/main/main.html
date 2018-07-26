@@ -1,0 +1,70 @@
+<div class="container fundo flex-column-center">
+
+
+    <div class="img-holder grow" ng-click="testAnim()">
+        <img src="/imgs/logo.svg">
+    </div>
+
+    <div class="box clean" ng-class="{'show': boxForm}">
+        <form class="form login" ng-class="{'animated slideInLeft': login, 'animated slideOutRight': cadastro}">
+
+            <div class="input-holder">
+                <input type="email" name="login-usuario" class="login usuario" placeholder="e-mail">
+                <label></label>
+            </div>
+
+            <div class="input-holder">
+                <input type="password" name="senha-usuario" class="login senha" placeholder="senha">
+                <label></label>
+            </div>
+
+            <div class="bt-group">
+                <div class="login bt normal main"><p>Vou de e-mail</p></div>
+
+                <div class="login bt small fb"><p>Vou de facebook</p></div>
+
+                <div class="login bt small link" ng-click="mudaForm()"><p>Nem tenho conta, quero me cadastrar!</p></div>
+            </div>
+
+            <!-- <div class="bt-group inline">
+                    
+                <div class="login bt"><i class="fas fa-check"></i></div>
+                <div class="login bt"><i class="fas fa-check"></i></div>
+            </div> -->
+
+        </form>
+
+        <form class="form cadastro" ng-class="{'animated slideOutRight': login, 'animated slideInLeft': cadastro}">
+
+            <div class="input-holder">
+                <input type="email" name="login-usuario" class="login usuario" placeholder="digite um e-mail">
+                <label></label>
+            </div>
+
+            <div class="input-holder">
+                <input type="password" name="senha-usuario" class="login senha" placeholder="escolha uma senha">
+                <label></label>
+            </div>
+
+            <div class="input-holder">
+                <input type="password" name="senha-usuario" class="login senha" placeholder="repete a senha, pls">
+                <label></label>
+            </div>
+
+            <div class="bt-group">
+                <div class="login bt normal main"><p>Cadastrar! Carga!</p></div>
+
+                <div class="login bt small fb"><p>Nah, vou pelo facebook</p></div>
+
+                <div class="login bt small link" ng-click="mudaForm()"><p>Preguiça disso, deixa eu voltar!</p></div>
+            </div>
+
+            <!-- <div class="bt-group inline">
+                    
+                <div class="login bt"><i class="fas fa-check"></i></div>
+                <div class="login bt"><i class="fas fa-check"></i></div>
+            </div> -->
+
+        </form>
+    </div>
+</div>

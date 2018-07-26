@@ -1,0 +1,18 @@
+Fonts used in this design;
+
+Font: Bebas Neue, 
+Author: Fontfabric, 
+Url: http://www.fontsquirrel.com/fonts/bebas-neue; 
+
+Font: Sofia Pro, 
+Author: Mostardesign, 
+Url: http://www.fontsquirrel.com/fonts/sofia-pro; 
+
+Font: Baloo, 
+Author: Ek Type, 
+Url: https://fonts.google.com/specimen/baloo; 
+
+Font: Built Titling, 
+Author: Typodermic, 
+Url: https://www.fontsquirrel.com/fonts/built-titling; 
+
