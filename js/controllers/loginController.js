@@ -1,14 +1,20 @@
 app.controller('loginCtrl',function($scope){
   
     $scope.userId = localStorage.getItem('userId');
-    $scope.boxForm = true;
 
-    $scope.login = true;
-    $scope.cadastro = false;
+    $scope.classeSlideLogin = 'animated bounceInLeft delay-05s';
+    $scope.classeSlideCadastro = 'hide';
 
     $scope.mudaForm = function () {
-      $scope.login = !$scope.login;
-      $scope.cadastro = !$scope.cadastro;
+      var parent = document.querySelector('.cadastro');
+
+      if (document.querySelector('.hide') !== null) {
+        $scope.classeSlideLogin = 'animated fadeOutLeft';
+        $scope.classeSlideCadastro = 'animated bounceInRight';
+      } else {
+        $scope.classeSlideLogin = 'animated bounceInLeft';
+        $scope.classeSlideCadastro = 'animated fadeOutRight hide';
+      }
     }
 
     //   $scope.registerUser = function () {

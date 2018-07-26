@@ -1,6 +1,9 @@
-app.controller('loadingCtrl',function($scope, $location){
+app.controller('loadingCtrl',function($scope, $location, $timeout){
 
-  $location.path('/login');
+
+  $timeout(function() { 
+    $location.path('/login');
+  }, 500);
 
 
     //   $scope.registerUser = function () {

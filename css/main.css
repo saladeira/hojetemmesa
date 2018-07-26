@@ -92,102 +92,104 @@ input::placeholder {
   /* -webkit-animation: slide 10s linear infinite; */
 }
 
-@keyframes slide {
-    0%   {background-position: 0 0;}
-    100% {background-position: -150px 250px;}
-}
-
 /* Containers com flex*/
 .container.flex-column-center {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
+}
+
+.img-holder-init {
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: flex;
 }
 
 .img-holder {
   overflow: hidden;
   padding: 1rem;
   width: 100%;
+  height: 100%;
+  max-height: 100%;
   display: flex;
+
+  -webkit-animation: encolhe 0.5s ease-out forwards;
+  animation: encolhe 0.5s ease-out forwards;
 }
 
-.img-holder.grow {
-  flex-grow: 1;
+@-webkit-keyframes encolhe{
+  from {max-height: 100%}
+  to {max-height: 50%}
 }
 
-.img-holder > img {
+@keyframes encolhe{
+  from {max-height: 100%}
+  to {max-height: 50%}
+}
+
+.img-holder > img, .img-holder-init > img {
   width: 75%;
   margin: 0 auto;
-
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
 }
 
 .box {
-  border: 1px solid red;
-  position: relative;
   width: 100%;
-  overflow: hidden;
+  height: 50%;
   max-height: 0%;
-  padding: 0;
-  opacity: 0;
+  overflow: hidden;
+  padding: 1.7rem;
+  opacity: 1;
+  visibility: hidden;
 
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translate3D(0, 0, 0);
+  box-sizing: border-box;
 
-  filter: blur(0);
+  -webkit-animation: estica 0.5s linear forwards;
+  animation: estica 0.5s linear forwards;
 
-  backface-visibility: hidden;
-  transform: translate3D(0, 0, 0);
-  /* background: #BBADFF; */
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+@-webkit-keyframes estica{
+  from {max-height: 0%;}
+  to {max-height: 100%; visibility: visible}
+}
+
+@keyframes estica{
+  from {max-height: 0%;}
+  to {max-height: 100%; visibility: visible}
 }
 
 .box.clean {
   background-color:none !important;
 }
 
-.box.show {
-  -webkit-animation: aumenta 1s ease-out forwards, fade 1s linear forwards;
-  animation: aumenta 1s ease-out forwards, fade 1s linear forwards;
-}
-
-/* Box animation */
-@-webkit-keyframes aumenta {
-  0%   {max-height: 0%; padding: 1.7rem}
-  100% {max-height: 100%; padding: 1.7rem}
-}
-
-@keyframes height {
-  0%   {max-height: 0%; padding: 1.7rem}
-  100% {max-height: 100%; padding: 1.7rem}
-}
-
-@-webkit-keyframes fade {
-  0%   {opacity: 0}
-  50%   {opacity: 0}
-  100% {opacity: 1}
-}
-
-@keyframes fade {
-  0%   {opacity: 0}
-  50%   {opacity: 0}
-  100% {opacity: 1}
+.form-holder {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
 }
 
 .form {
-  position: relative;
-  top: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   /* left: -100%;
   max-height: 0px; */
 
   box-sizing: border-box;
+  z-index: 2;
 }
 
-.form.slide {
-  left: 0;
-  max-height: 2000px;
+.form.hide {
+  opacity: 0;
+  z-index: 1 !important;
 }
 
 .input-holder {
@@ -265,9 +267,11 @@ input:focus::-webkit-input-placeholder {
   margin: 0rem 0.7rem 1rem 0rem;
   width: 100%;
   border-radius: 30rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-family: 'Quicksand', sans-serif;
+  /* text-transform: uppercase; */
+}
+
+.bt > p {
+  font-family: 'Slackey', cursive;
 }
 
 .bt.main {
@@ -294,6 +298,10 @@ input:focus::-webkit-input-placeholder {
   text-transform: none;
   background-color: transparent;
   color:#F6F2FF;
+}
+
+.bt.link > p {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .bt:last-child {
